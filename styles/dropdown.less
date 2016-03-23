@@ -24,7 +24,6 @@
 .menu ul { display: none; } /* Hide before plugin loads */
 .menu ul.dropit-submenu {
     background-color: #FFF;
-    border-top: 1px dashed @black;
     color: @black;
     //width: 120px;
     border: 1px solid @black;
@@ -35,8 +34,11 @@
     line-height: 25px;
     color: @black;
     padding: 5px 18px;
-    border-bottom: 1px dashed @black;
     cursor: pointer;
+}
+
+.menu ul.dropit-submenu li:not(:last-child) {
+    border-bottom: 1px dashed @black;    
 }
 
 .menu ul.dropit-submenu li:hover {
