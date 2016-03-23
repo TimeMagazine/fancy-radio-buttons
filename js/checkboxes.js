@@ -6,42 +6,45 @@ opts:
 
 var template = require("../templates/checkbox.html");
 
-module.exports = function(parent, opts) {
-	if (!opts.items) {
-		console.error("You must supply an `items` property to the options to fill in the radio buttons.");
-		return;
-	}
+;(function($) {
 
-	$(parent).addClass("timeUI");
+	module.exports = function(parent, opts) {
+		if (!opts.items) {
+			console.error("You must supply an `items` property to the options to fill in the radio buttons.");
+			return;
+		}
 
-	var container = $("<div />", { id: opts.id }).addClass("control-group").appendTo(parent);
+		$(parent).addClass("timeUI");
 
-	opts.items.forEach(function(item) {
-		$(template({ group: opts.id, label: item })).appendTo(container);
-	});
+		var container = $("<div />", { id: opts.id }).addClass("control-group").appendTo(parent);
 
-	if (opts.defaults) {
-		opts.defaults.forEach(function(def) {
-			$(parent + " input[data-value='" + def + "']").attr("checked", "checked");
+		opts.items.forEach(function(item) {
+			$(template({ group: opts.id, label: item })).appendTo(container);
 		});
-	}
 
-	function get_selected() {
-		var selected = [];
-		$(parent + " input:checked").each(function(i, v) {
-			selected.push($(v).data("value"));
+		if (opts.defaults) {
+			opts.defaults.forEach(function(def) {
+				$(parent + " input[data-value='" + def + "']").attr("checked", "checked");
+			});
+		}
+
+		function get_selected() {
+			var selected = [];
+			$(parent + " input:checked").each(function(i, v) {
+				selected.push($(v).data("value"));
+			});
+			return selected;		
+		}
+
+		$(parent + " input").change(function() {
+			opts.callback && opts.callback(get_selected());
 		});
-		return selected;		
-	}
 
-	$(parent + " input").change(function() {
-		opts.callback && opts.callback(get_selected());
-	});
-
-	return {
-		value: get_selected(),
-		set: function(values) {
-			// to do
+		return {
+			value: get_selected(),
+			set: function(values) {
+				// to do
+			}
 		}
 	}
-}
+})(jQuery);	

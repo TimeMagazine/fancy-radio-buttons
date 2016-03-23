@@ -1,6 +1,6 @@
 {
   "name": "time-input-buttons",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Styled input buttons build from scratch",
   "main": "index.js",
   "scripts": {
@@ -14,7 +14,7 @@
     "radio",
     "buttons"
   ],
-  "author": "Chris Wilson, Kenan Yusuf",
+  "author": "Chris Wilson, Kenan Yusuf, Gilbert Pellegrom",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/TimeMagazine/time-input-buttons/issues"

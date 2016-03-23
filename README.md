@@ -1,6 +1,8 @@
 TIME Input Buttons
 ============
 
+v.0.0.2
+
 These are some standard UI buttons for TIME interactives. Right now, we've got:
 
 + Checkboxes
