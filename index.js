@@ -24,6 +24,16 @@
 			$(templates[opts.type]({ group: opts.id, label: item })).appendTo(container);
 		});
 
+		if (opts.default) {
+			if (opts.type == "radio") {
+				$(parent + " input[data-value='" + opts.default + "']").attr("checked", "checked");
+			} else {
+				opts.default.forEach(function(def) {
+					$(parent + " input[data-value='" + def + "']").attr("checked", "checked");
+				});
+			}
+		}
+
 		$(parent + " input").change(function() {
 			var selected = [];
 			$(parent + " input:checked").each(function(i, v) {

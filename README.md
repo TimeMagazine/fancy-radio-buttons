@@ -40,4 +40,5 @@ As usual, the first argument in the selector for the parent container, which you
 + id: Required. The id of the parent element
 + type: `radio` or `checkbox`. Defaults to radio.
 + items: Required. The labels for the selectable buttons and checkmarks.
++ default: Which items should be pre-checked. Radio groups take a single value why check box groups take an array.
 + callback: Optional. A radio set returns a single value which a checkmarket set returns an array of all checked values.
