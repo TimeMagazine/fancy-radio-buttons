@@ -35,7 +35,12 @@ This repo draws heavily from the MIT-licensed [Dropit](https://github.com/gilbit
 		}
 	});
 
-There are examples of every element type in the repo at [examples/index.html](examples/index.html).
+These modules are meant to be built with [Browserify](http://browserify.org/), so the CSS will all be baked into the final javascript file. There are examples of every element type in the repo at [examples/examples.html](examples/examples.html).
+
+This, if you make any changes to [example/debug.js](example/debug.js), you have to recompile it with the following command:
+
+	#in the examples directory
+	browserify debug.js > index.js --debug
 
 ## Usage
 
