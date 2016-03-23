@@ -1,14 +1,14 @@
 {
-  "name": "fancy-radio-buttons",
-  "version": "0.0.0",
-  "description": "Styled radio buttons build from scratch",
+  "name": "time-input-buttons",
+  "version": "0.0.1",
+  "description": "Styled input buttons build from scratch",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/TimeMagazine/fancy-radio-buttons.git"
+    "url": "https://github.com/TimeMagazine/time-input-buttons.git"
   },
   "keywords": [
     "radio",
@@ -17,7 +17,7 @@
   "author": "Chris Wilson, Kenan Yusuf",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/TimeMagazine/fancy-radio-buttons/issues"
+    "url": "https://github.com/TimeMagazine/time-input-buttons/issues"
   },
   "browserify": {
     "transform": [
@@ -25,7 +25,7 @@
       "node-underscorify"
     ]
   },
-  "homepage": "https://github.com/TimeMagazine/fancy-radio-buttons",
+  "homepage": "https://github.com/TimeMagazine/time-input-buttons",
   "dependencies": {
     "node-lessify": "^0.1.1",
     "node-underscorify": "0.0.14"

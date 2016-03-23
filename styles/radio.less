@@ -27,7 +27,7 @@
 	left: 0;
 	width: 20px;
 	height: 20px;
-	background: #e6e6e6;
+	background: @background;
 }
 
 .control--radio .control__indicator {
@@ -42,14 +42,14 @@
 
 /* Checked state */
 .control input:checked ~ .control__indicator {
-	background: #c00;
+	background: @red;
 }
 
 /* Disabled state */
 .control input:disabled ~ .control__indicator {
 	pointer-events: none;
 	opacity: .6;
-	background: #e6e6e6;
+	background: @background;
 }
 
 /* Check mark */
@@ -77,7 +77,7 @@
 
 /* Disabled tick colour */
 .control--checkbox input:disabled ~ .control__indicator:after {
-	border-color: #7b7b7b;
+	border-color: @background_dark;
 }
 
 /* Radio button inner circle */
@@ -92,5 +92,5 @@
 
 /* Disabled circle colour */
 .control--radio input:disabled ~ .control__indicator:after {
-	background: #7b7b7b;
+	background: @background_dark;
 }

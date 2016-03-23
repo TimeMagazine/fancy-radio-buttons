@@ -1,0 +1,54 @@
+.menu {
+    width: auto !important;
+    display: inline-block;
+    font-weight: 100;
+    margin: 0 2px !important;
+}
+
+.menu a {
+    text-decoration: none;
+}
+
+.menu .selection {
+    background-color: @background;
+    text-align: center;
+    color: @black;
+    display: inline-block;
+    padding: 10px;
+}
+
+.menu ul { display: none; } /* Hide before plugin loads */
+.menu ul.dropit-submenu {
+    background-color: #FFF;
+    border-top: 1px dashed @black;
+    color: @black;
+    //width: 120px;
+    border: 1px solid @black;
+}
+
+.menu ul.dropit-submenu li {
+    display: block;
+    line-height: 25px;
+    color: @black;
+    padding: 5px 18px;
+    border-bottom: 1px dashed @black;
+    cursor: pointer;
+}
+
+.menu ul.dropit-submenu li:hover {
+    background: @red;
+    color: #fff;
+    text-decoration: none;
+}
+
+.arrow-down {
+    width: 0; 
+    height: 0; 
+    border-left: 3px solid transparent;
+    border-right: 3px solid transparent;   
+    border-top: 5px solid @red;
+    display: inline-block;
+    float: right;
+    margin-top: 8px;
+    margin-left: 8px;
+}
