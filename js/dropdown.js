@@ -32,12 +32,22 @@ var template = require("../templates/dropdown.html");
 			}).appendTo("#" + opts.id + " li ul");
 		});
 
-		$('.menu').dropit();	
+		$(parent + ' .menu').dropit({
+			beforeShow: opts.beforeShow
+		});
+
+		// make dropdown the size of the longest option
+		//$(parent + " .dropit-trigger").css("width", Math.max($(parent + " .selection").width(), $(parent + " .dropit-submenu").outerWidth()));
+
+		// fire callback if a valid value is preselected
+		if (opts.intro == opts.items[0]) {
+			opts.callback && opts.callback($(parent + " .selection").text().trim());
+		}
 
 		// replace value when selection changes
 		$("body").on("click", "#" + opts.id + " li ul li", function() {
 			$("#" + opts.id + " .value").html($(this).text());
-			opts.callback && opts.callback($(this).text());
+			opts.callback && opts.callback($(this).text().trim());
 		});
 
 		return {

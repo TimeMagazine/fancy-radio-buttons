@@ -1,3 +1,13 @@
+.dropit .dropit-trigger {
+    background-color: @background;
+    padding: 5px 0;
+    //min-width: 120px;
+}
+
+.dropit .dropit-submenu {
+    //min-width: auto;
+}
+
 .menu {
     width: auto !important;
     display: inline-block;
@@ -11,7 +21,6 @@
 
 .menu .selection {
     position: relative;
-    background-color: @background;
     text-align: center;
     color: @black;
     padding: 10px;
@@ -22,6 +31,7 @@
 }
 
 .menu ul { display: none; } /* Hide before plugin loads */
+
 .menu ul.dropit-submenu {
     background-color: #FFF;
     color: @black;
@@ -50,10 +60,10 @@
 .arrow-down {
     width: 0; 
     height: 0; 
-    border-left: 3px solid transparent;
-    border-right: 3px solid transparent;   
-    border-top: 5px solid @red;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;   
+    border-top: 8px solid @red;
     position: absolute;
     right: 8px;
-    top: 43%;
+    top: 41%;
 }

@@ -32,7 +32,7 @@ opts:
 		});
 
 		$("#" + opts.id).on('keyup', function(e) {
-			opts.callback && opts.callback($("#" + opts.id).val());
+			opts.callback && opts.callback(parseFloat($("#" + opts.id).val()));
 		});
 	}	
 })(jQuery);
