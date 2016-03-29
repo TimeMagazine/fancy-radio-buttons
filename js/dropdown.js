@@ -41,16 +41,22 @@ var template = require("../templates/dropdown.html");
 
 		// fire callback if a valid value is preselected
 		if (opts.intro == opts.items[0]) {
-			opts.callback && opts.callback($(parent + " .selection").text().trim());
+			opts.callback && opts.callback($(parent + " .selection").text().trim(), "initial");
 		}
 
 		// replace value when selection changes
 		$("body").on("click", "#" + opts.id + " li ul li", function() {
 			$("#" + opts.id + " .value").html($(this).text());
-			opts.callback && opts.callback($(this).text().trim());
+			opts.callback && opts.callback($(this).text().trim(), "user");
 		});
 
 		return {
+			items: opts.items,
+			randomize: function() {
+				var value = opts.items[Math.floor(Math.random()*opts.items.length)];
+				$("#" + opts.id + " .value").html(value);
+				opts.callback && opts.callback(value, "randomized");				
+			},
 			value: function() {
 				return $("#" + opts.id + " .value").text();
 			},
