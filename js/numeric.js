@@ -10,7 +10,8 @@ opts:
 
 		$("<input />", {
 			id: opts.id,
-			maxlength: opts.length || 2
+			maxlength: opts.length || 2,
+			pattern: "\\d*"
 		}).addClass("numeric").appendTo(parent);
 
 		if (opts.default) {
