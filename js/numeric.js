@@ -8,18 +8,25 @@ opts:
 	module.exports = function(parent, opts) {
 		$(parent).addClass("timeUI");
 
+		var container = $("<div />", { id: opts.id }).addClass("control-group").appendTo(parent);
+
+		if (opts.title) {
+			$("<div />", {
+				html: opts.title
+			}).appendTo(container);
+		}
+
 		$("<input />", {
-			id: opts.id,
 			maxlength: opts.length || 2,
 			pattern: "\\d*"
-		}).addClass("numeric").appendTo(parent);
+		}).addClass("numeric").appendTo(container);
 
 		if (opts.default) {
-			$("#" + opts.id).attr("value", opts.default);
+			$("#" + opts.id + " input").attr("value", opts.default);
 		}
 
 		// only allow digits in age entry
-		$("#" + opts.id).on('keydown', function(e) {
+		$("#" + opts.id + " input").on('keydown', function(e) {
 		    var key = e.keyCode ? e.keyCode : e.which;
 
 		    if (!( [8, 9, 13, 27, 46, 110, 190].indexOf(key) !== -1 ||
@@ -32,8 +39,8 @@ opts:
 
 		});
 
-		$("#" + opts.id).on('keyup', function(e) {
-			opts.callback && opts.callback(parseFloat($("#" + opts.id).val()));
+		$("#" + opts.id + " input").on('keyup', function(e) {
+			opts.callback && opts.callback(parseFloat($("#" + opts.id + " input").val()));
 		});
 	}	
 })(jQuery);

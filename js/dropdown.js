@@ -5,8 +5,9 @@ opts:
 -intro: Non-selectedable default text, like "Choose a state"
 */
 
+//require(__dirname + "/Dropit/Dropit.js");
 //require(__dirname + "/Dropit/dropit.css");
-require("./Dropit/dropit.js");
+require("./Dropit/dropit");
 var template = require("../templates/dropdown.html");
 
 ;(function($) {

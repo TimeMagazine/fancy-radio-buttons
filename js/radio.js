@@ -16,6 +16,12 @@ var template = require("../templates/radio.html");
 		$(parent).addClass("timeUI");
 		var container = $("<div />", { id: opts.id }).addClass("control-group").appendTo(parent);
 
+		if (opts.title) {
+			$("<div />", {
+				html: opts.title
+			}).appendTo(container);
+		}
+
 		opts.items.forEach(function(item) {
 			$(template({ group: opts.id, label: item })).appendTo(container);
 		});

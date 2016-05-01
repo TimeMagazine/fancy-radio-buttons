@@ -27,6 +27,7 @@
   },
   "homepage": "https://github.com/TimeMagazine/time-input-buttons",
   "dependencies": {
+    "dropit": "^1.0.0",
     "node-lessify": "^0.1.1",
     "node-underscorify": "0.0.14"
   }
