@@ -5,8 +5,6 @@ opts:
 -intro: Non-selectedable default text, like "Choose a state"
 */
 
-//require(__dirname + "/Dropit/Dropit.js");
-//require(__dirname + "/Dropit/dropit.css");
 require("./Dropit/dropit");
 var template = require("../templates/dropdown.html");
 
@@ -33,12 +31,16 @@ var template = require("../templates/dropdown.html");
 			}).appendTo("#" + opts.id + " li ul");
 		});
 
-		$(parent + ' .menu').dropit({
-			beforeShow: opts.beforeShow
-		});
+		$(parent + ' .menu')
+			.dropit({
+				beforeShow: opts.beforeShow
+			});
+
+		var max_width = Math.max($(parent).innerWidth(), $(parent + " .selection").width(), $(parent + " .dropit-submenu").outerWidth());
 
 		// make dropdown the size of the longest option
-		//$(parent + " .dropit-trigger").css("width", Math.max($(parent + " .selection").width(), $(parent + " .dropit-submenu").outerWidth()));
+		$(parent + " .dropit-submenu").css("width", Math.min(400, max_width));
+		$(parent + " .dropit-trigger").css("width", Math.min(400, max_width));
 
 		// fire callback if a valid value is preselected
 		if (opts.intro == opts.items[0]) {

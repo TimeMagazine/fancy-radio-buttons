@@ -11,7 +11,6 @@ opts:
 ;(function($) {
 	var template = require("./template.html");
 
-
 	module.exports = function(parent, opts) {
 		if (!opts.items) {
 			console.error("You must supply an `items` property to the options to fill in the dropdown.");

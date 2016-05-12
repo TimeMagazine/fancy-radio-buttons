@@ -22,8 +22,8 @@
 
                     // Hide initial submenus
                     $el.addClass('dropit')
-                    .find('>'+ settings.triggerParentEl +':has('+ settings.submenuEl +')').addClass('dropit-trigger')
-                    .find(settings.submenuEl).addClass('dropit-submenu').hide();
+                        .find('>'+ settings.triggerParentEl +':has('+ settings.submenuEl +')').addClass('dropit-trigger')
+                        .find(settings.submenuEl).addClass('dropit-submenu').hide();
 
                     // Open on click
                     $el.off(settings.action).on(settings.action, settings.triggerParentEl +':has('+ settings.submenuEl +') > '+ settings.triggerEl +'', function(){
@@ -46,6 +46,27 @@
                         settings.afterShow.call(this);
 
                         return false;
+                    });
+
+                    $(el).find(".arrow-down").on(settings.action, function() {
+                        if(settings.action == 'click' && $(this).parents(settings.triggerParentEl).hasClass('dropit-open')){
+                            settings.beforeHide.call(this);
+                            $(this).parents(settings.triggerParentEl).removeClass('dropit-open').find(settings.submenuEl).hide();
+                            settings.afterHide.call(this);
+                            return false;
+                        }
+
+                        // Hide open menus
+                        settings.beforeHide.call(this);
+                        $('.dropit-open').removeClass('dropit-open').find('.dropit-submenu').hide();
+                        settings.afterHide.call(this);
+
+                        // Open this menu
+                        settings.beforeShow.call(this);
+                        $(this).parents(settings.triggerParentEl).addClass('dropit-open').find(settings.submenuEl).show();
+                        settings.afterShow.call(this);
+
+                        return false;                        
                     });
 
                     // Close if outside click

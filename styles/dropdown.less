@@ -1,18 +1,18 @@
-.dropit .dropit-trigger {
-    background-color: @background;
-    padding: 5px 0;
-    //min-width: 120px;
+.dropit {
+    //display: block;
 }
 
-.dropit .dropit-submenu {
-    //min-width: auto;
+.dropit .dropit-trigger {
+    position: relative;
+    padding: 5px 0;
 }
 
 .menu {
-    width: auto !important;
+    background-color: transparent;
+    //width: auto !important;
     display: inline-block;
     font-weight: 100;
-    margin: 10px 2px !important;
+    margin: 0 !important;
     line-height: 1.3em;
 }
 
@@ -22,10 +22,14 @@
 }
 
 .menu .selection {
-    position: relative;
-    text-align: center;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: left;
     color: @black;
-    padding: 10px;
+    padding: 10px 20px 10px 10px;
 
     span {
         padding-right: 20px;
@@ -37,16 +41,20 @@
 .menu ul.dropit-submenu {
     background-color: #FFF;
     color: @black;
-    //width: 120px;
+    position: absolute;
+    left: 0;
+    top: auto;
+    width: 250px;
     border: 1px solid @black;
 }
 
 .menu ul.dropit-submenu li {
-    display: block;
-    line-height: 25px;
+    line-height: 1.1em;
+    font-size: 16px;
     color: @black;
-    padding: 5px 18px;
+    padding: 7px 9px;
     cursor: pointer;
+    white-space: normal;
 }
 
 .menu ul.dropit-submenu li:not(:last-child) {
@@ -67,5 +75,21 @@
     border-top: 8px solid @red;
     position: absolute;
     right: 8px;
-    top: 41%;
+    top: 43%;
+    margin: 0;
+}
+
+.dropit-open {
+    .arrow-down {
+        width: 0; 
+        height: 0; 
+        border-left: 5px solid transparent;
+        border-right: 5px solid transparent;   
+        border-bottom: 8px solid @red;
+        border-top: 0;
+        position: absolute;
+        right: 8px;
+        top: 43%;
+        margin: 0;
+    }    
 }
