@@ -28,4 +28,4 @@ require("./styles/timeUI.less");
 		return types[type](parent, opts);
 
 	}
-})(jQuery);
+})(window.jQuery);
